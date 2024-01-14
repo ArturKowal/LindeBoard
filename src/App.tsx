@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import Alert from "./components/Alert";
+// import SubmitButton from "./components/SubmitButton";
+// import ListGroup from "./components/ListGroup";
+
+import DismissingAlert from "./components/DismissingAlert";
+import CreateAlertButton from "./components/CreateAlertButton";
+import { useState } from "react";
+
+// let items = ["praca", "job", "board", "uczymy", "sie"];
+
+// const handleSelectItem = (item: string) => {
+// console.log(item)
+// }
+
+// const handleClick = (click: boolean) => {
+//   click ? console.log("now clicked") : null
+//   }
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [alertVisable, setAlertVisibility] = useState(false)
+  const [buttonVisable, setButtonVisibility] = useState(false)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {/* <ListGroup items={items} heading="Oferty" onSelectItem={handleSelectItem}></ListGroup> */}
+      {/* <Alert>Nowa oferta <span>pracy!</span></Alert> */}
+      {/* <SubmitButton color="info"  onClick={() => console.log("now clicked")}>Submituj to</SubmitButton> */}
+      {alertVisable && <DismissingAlert alertVisable={setAlertVisibility} buttonVisable={setButtonVisibility}></DismissingAlert>}
+      {buttonVisable && <CreateAlertButton alertVisable={setAlertVisibility} buttonVisable={setButtonVisibility}>Create alert</CreateAlertButton>}
+    </div>
+  );
 }
 
-export default App
+export default App;
