@@ -1,4 +1,4 @@
-import '/src/App.css';
+import "/src/App.css";
 // import Alert from "./components/Alert";
 // import SubmitButton from "./components/SubmitButton";
 // import ListGroup from "./components/ListGroup";
@@ -8,7 +8,7 @@ import '/src/App.css';
 // import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import HomePage from "./body/HomePage";
+import PageSelector from "./pages/PageSelector";
 
 // let items = ["praca", "job", "board", "uczymy", "sie"];
 
@@ -20,21 +20,18 @@ import HomePage from "./body/HomePage";
 //   click ? console.log("now clicked") : null
 //   }
 
-
-
-
 function App() {
   // const [alertVisable, setAlertVisibility] = useState(false)
   // const [buttonVisable, setButtonVisibility] = useState(false)
   return (
-    <div className='container rel'>
+    <div className="container rel">
       {/* <ListGroup items={items} heading="Oferty" onSelectItem={handleSelectItem}></ListGroup>
       {/* <Alert>Nowa oferta <span>pracy!</span></Alert> 
       {/* <SubmitButton color="info"  onClick={() => console.log("now clicked")}>Submituj to</SubmitButton> 
       {/* {alertVisable && <DismissingAlert alertVisable={setAlertVisibility} buttonVisable={setButtonVisibility}></DismissingAlert>}
       {buttonVisable && <CreateAlertButton alertVisable={setAlertVisibility} buttonVisable={setButtonVisibility}>Create alert</CreateAlertButton>} */}
       <Navbar />
-      <HomePage />
+      <PageSelector></PageSelector>
       <Footer />
     </div>
   );
