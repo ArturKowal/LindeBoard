@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar  bg-dark navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <nav className="navbar bg-body-tertiary">
             <div className="container">
@@ -10,16 +10,16 @@ const Navbar = () => {
               </a>
             </div>
           </nav>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" style={{marginLeft: "auto"}}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Oferty
+                <a className="nav-link active" aria-current="page" href="/">
+                  Offers
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
-                  Dodaj
+                  Add an offer
                 </a>
               </li>
             </ul>

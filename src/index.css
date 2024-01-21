@@ -116,3 +116,8 @@
 #header, #header * {
   background: rgba(40, 40, 100, 0.25);
 }
+
+.footer {
+  margin-top: auto;
+  background-color: #333;
+}

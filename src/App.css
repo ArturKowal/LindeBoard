@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    border: 5px solid limegreen;
   }
 
 .centerAK {
@@ -34,4 +35,38 @@
   
  .header, #header * {
     background: rgba(40, 40, 100, 0.25);
+  }
+
+  .footerr {
+    border: 5px solid limegreen;
+    height: 350px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .granicay {
+    border: 5px solid rgb(255, 242, 0);
+  }
+
+  .granicab {
+    border: 5px solid rgb(38, 83, 245);
+  }
+
+  .granicaz {
+    border: 5px solid rgb(8, 226, 8);
+  }
+
+  .rel {
+    position: relative;
+  }
+
+  .abs {
+    position: absolute;
+  }
+
+.footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height: 35px;
   }
