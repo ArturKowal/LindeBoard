@@ -1,7 +1,7 @@
 const SearchFieldWithButton = () => {
   return (
     <div
-      className="input-group granica"
+      className="input-group"
       style={{ minWidth: 300, maxWidth: 600, padding: 20 , margin: "auto"}}
     >
       <input
