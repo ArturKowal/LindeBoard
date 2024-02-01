@@ -1,40 +1,25 @@
+import { useState } from "react";
 import TitleField from "./TitleField";
+import AddOfferButton from "./AddOfferButton";
 import DescriptionField from "./DescriptionField";
 import SalaryField from "./SalaryField";
-// import React, { ChangeEvent, FormEvent, useState } from "react";
 
-const CreateOfferForm: React.FC = () => {
-  // const [title, setTitle] = useState("");
-  // const [titleError, setTitleError] = useState(false);
-  // const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setTitle(e.target.value);
-  // };
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (!name.trim()) {
-  //     setError(true);
-  //   } else {
-  //     setError(false);
-  //   }
-  // };
+const CreateOfferForm = () => {
 
-  // const [description, setDescription] = useState("");
-  // const [descriptionError, setDescriptionError] = useState(false);
-  // const handleDescriptionChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setDescription(e.target.value);
-  // };
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [salary, setSalary] = useState("");
 
-  // const [salary, setSalary] = useState("");
-  // const [salaryError, setSalaryError] = useState(false);
-  // const handleSalaryChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setSalary(e.target.value);
-  // };
+  const handleClick = () => {
+    console.log("clicked");
+  }
 
   return (
-    <div style={{ paddingTop: 30 }}>
-      <TitleField></TitleField>
-      <DescriptionField></DescriptionField>
-      <SalaryField></SalaryField>
+    <div>
+      <TitleField title={setTitle}></TitleField>
+      <DescriptionField description={setDescription}></DescriptionField>
+      <SalaryField salary={setSalary}></SalaryField>
+      {title && description && salary && <AddOfferButton onClick={() => handleClick()}></AddOfferButton>}
     </div>
   );
 };

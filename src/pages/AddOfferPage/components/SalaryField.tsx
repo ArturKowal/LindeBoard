@@ -1,20 +1,27 @@
-// import { ChangeEvent, FC } from "react";
+import { ChangeEvent } from "react";
 
-// interface InputProps {
-//   value: string | number;
-//   error: boolean;
-//   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-// }
+interface Props {
+  salary: (item: string) => void;
+}
 
-const SalaryField: React.FC = () => {
-// : FC<InputProps> = ({ value, error, onChange }) => {
+const SalaryField = ({ salary }: Props) => {
+  const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const target = event.target as HTMLInputElement;
+    console.log("salary is:", target.value);
+    salary(target.value);
+  };
   return (
     <div className="input-group mb-3">
       <span className="input-group-text">PLN</span>
       <input
-        type="text"
+        type="number"
+        min="0"
         className="form-control"
         aria-label="Amount (to the nearest dollar)"
+        onChange={(event) => {
+          handleEvent(event);
+        }}
       />
       <span className="input-group-text">gross per month</span>
     </div>

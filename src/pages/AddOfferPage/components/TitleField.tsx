@@ -1,13 +1,18 @@
-// import { ChangeEvent, FC } from "react";
+import { ChangeEvent } from "react";
 
-// interface InputProps {
-//   value: string | number;
-//   error: boolean;
-//   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-// }
+interface Props {
+  title: (item: string) => void;
+}
 
-const TitleField: React.FC = () => {
-// FC<InputProps> = ({ value, error, onChange }) => {
+const TitleField = ({ title }: Props) => {
+
+    const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        const target = event.target as HTMLInputElement;
+        console.log("title is:", target.value);
+        title(target.value);
+      };
+
   return (
     <div>
       <div className="mb-3">
@@ -15,15 +20,14 @@ const TitleField: React.FC = () => {
           Title
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
           id="title"
           placeholder="Job title / position name"
-        //   value={value}
-        //   onChange={onChange}
-        >
-          {/* {error && <p className="error">Input filed can't be empty!</p>} */}
-        </input>
+          onChange={(event) => {
+            handleEvent(event);
+          }}
+        ></input>
       </div>
     </div>
   );

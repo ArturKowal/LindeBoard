@@ -1,13 +1,17 @@
-// import { ChangeEvent, FC } from "react";
+import { ChangeEvent } from "react";
 
-// interface InputProps {
-//   value: string | number;
-//   error: boolean;
-//   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-// }
+interface Props {
+  description: (item: string) => void;
+}
 
-const DescriptionField: React.FC = () => {
-// : FC<InputProps> = ({ value, error, onChange }) => {
+const DescriptionField = ({ description }: Props) => {
+
+  const handleEvent = (event: ChangeEvent<HTMLTextAreaElement>) => {
+      event.preventDefault();
+      const target = event.target as HTMLTextAreaElement;
+      console.log("description is:", target.value);
+      description(target.value);
+    };
   return (
     <div className="mb-3">
       <label htmlFor="exampleFormControlTextarea1" className="form-label">
@@ -16,6 +20,9 @@ const DescriptionField: React.FC = () => {
       <textarea
         className="form-control"
         id="exampleFormControlTextarea1"
+        onChange={(event) => {
+          handleEvent(event);
+        }}
       ></textarea>
     </div>
   );
