@@ -3,7 +3,7 @@ import SearchFieldWithButton from "./components/SearchFieldWithButton";
 
 const HomePage = () => {
   return (
-    <div className="container" style={{ padding: 20 }}>
+    <div className="container">
       <SearchFieldWithButton></SearchFieldWithButton>
       <HorizontalListWithCards></HorizontalListWithCards>
     </div>

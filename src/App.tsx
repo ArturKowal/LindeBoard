@@ -8,11 +8,11 @@ import PageSelector from "./pages/PageSelector";
 
 function App() {
   return (
-    <div className="container rel">
-      <Navbar />
+    <div className="container mainLayout">
+      <div className="container navbarOwn"><Navbar></Navbar></div>
       {/* <HelpfulPage /> */}
-      <PageSelector></PageSelector>
-      <Footer />
+      <div className="container contentContainerOwn"><PageSelector></PageSelector></div>
+      <div className="container footerOwn"><Footer /></div>
     </div>
   );
 }

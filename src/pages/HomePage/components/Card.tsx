@@ -1,20 +1,20 @@
-
 interface offer {
+  offerId: string;
   title: string;
-  description: string;
+  salary: number;
 }
 
-
-const Card = ({ title, description }: offer) => {
+const Card = ({ title, salary, offerId }: offer) => {
   return (
-    <div className="card" style={{ minWidth: 230, maxWidth: 230, backgroundColor: "#D9EDBF"}}>
+    <div
+      className="card"
+      style={{ minWidth: 230, maxWidth: 230, backgroundColor: "#D9EDBF" }}
+    >
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">
-          {description}
-        </p>
-        <a href="#" className="btn btn-primary">
-        Check this out!
+        <p className="card-text">{salary} PLN/month</p>
+        <a href={"/offerId/" + offerId} className="btn btn-warning">
+          Check this out!
         </a>
       </div>
     </div>

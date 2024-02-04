@@ -1,43 +1,32 @@
+import logo from "../components/images/logo_canva.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <nav className="navbar bg-body-tertiary">
-            <div className="container">
-              <a className="navbar-brand" href="/home">
-                <img
-                  src="src/components/images/logo_canva.png"
-                  width="120"
-                  height="60"
-                />
+      <nav className="navbar navbar-dark bg-light">
+        <div className="container d-flex justify-content-between align-items-center">
+          <div className="d-flex">
+            <a className="navbar-brand" href="/home">
+              <img src={logo} alt="Logo" width="120" height="60" />
+            </a>
+          </div>
+
+          <div className="d-flex">
+            <div className="paddingLeftRight navbar-light">
+              <a className="nav-link active" aria-current="page" href="/home">
+                Home
               </a>
             </div>
-          </nav>
-          <div
-            className="collapse navbar-collapse"
-            style={{ marginLeft: "auto" }}
-          >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="/offers"
-                >
-                  Offers
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="/addOffer"
-                >
-                  Add an offer
-                </a>
-              </li>
-            </ul>
+            <div className="paddingLeftRight navbar-light">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="/addOffer"
+              >
+                Add an offer
+              </a>
+            </div>
           </div>
         </div>
       </nav>
