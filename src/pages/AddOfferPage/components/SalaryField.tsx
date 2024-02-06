@@ -8,7 +8,6 @@ const SalaryField = ({ salary }: Props) => {
   const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const target = event.target as HTMLInputElement;
-    console.log("salary is:", target.value);
     salary(target.value);
   };
   return (

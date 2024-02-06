@@ -9,7 +9,6 @@ const DescriptionField = ({ description }: Props) => {
   const handleEvent = (event: ChangeEvent<HTMLTextAreaElement>) => {
       event.preventDefault();
       const target = event.target as HTMLTextAreaElement;
-      console.log("description is:", target.value);
       description(target.value);
     };
   return (

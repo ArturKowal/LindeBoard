@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const SearchFieldWithButton = () => {
 
-  const [key, setKey] = useState("");
+  let [key, setKey] = useState("");
 
   const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -13,6 +13,9 @@ const SearchFieldWithButton = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
+    if (!key) {
+      key = "default"
+    }
     navigate("/offers/results/" + key.split(" "));
   };
 

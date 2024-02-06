@@ -9,7 +9,6 @@ const TitleField = ({ title }: Props) => {
     const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
         const target = event.target as HTMLInputElement;
-        console.log("title is:", target.value);
         title(target.value);
       };
 
@@ -34,3 +33,4 @@ const TitleField = ({ title }: Props) => {
 };
 
 export default TitleField;
+

@@ -7,7 +7,7 @@ const AddOfferButton = ({ onClick }: Props) => {
     <div>
       <div className="">
         <a
-          href="/offer/newOfferAdded/:15" // TODO do zmiany przy połączniu z backendem
+          // href="/offer/newOfferAdded/:15" // TODO do zmiany przy połączniu z backendem
           className="btn btn-dark addOdderButton"
           role="button"
           aria-pressed="true"
