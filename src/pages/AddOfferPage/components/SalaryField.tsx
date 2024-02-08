@@ -1,14 +1,14 @@
 import { ChangeEvent } from "react";
 
 interface Props {
-  salary: (item: string) => void;
+  salary: (item: number) => void;
 }
 
 const SalaryField = ({ salary }: Props) => {
   const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    const target = event.target as HTMLInputElement;
-    salary(target.value);
+    const target = (event.target as HTMLInputElement);
+    salary(parseFloat(target.value));
   };
   return (
     <div className="input-group mb-3">

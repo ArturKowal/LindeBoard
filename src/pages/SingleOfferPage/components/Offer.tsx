@@ -5,11 +5,7 @@ interface OfferProps {
   salary: number;
 }
 
-interface SinfleOfferItem {
-  item: OfferProps;
-}
-
-const Offer = ({ item }: SinfleOfferItem) => {
+const Offer = ({ item }: { item: OfferProps }) => {
   return (
     <div>
       <ul className="list-group">

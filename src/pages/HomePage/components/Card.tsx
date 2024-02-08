@@ -1,19 +1,24 @@
-interface offer {
+interface OfferProps {
   offerId: string;
   title: string;
+  description: string;
   salary: number;
 }
 
-const Card = ({ title, salary, offerId }: offer) => {
+interface Offer {
+  item: OfferProps;
+}
+
+const Card = ({ item }: Offer) => {
   return (
     <div
       className="card"
       style={{ minWidth: 230, maxWidth: 230, backgroundColor: "#D9EDBF" }}
     >
       <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">{salary} PLN/month</p>
-        <a href={"/offerId/" + offerId} className="btn btn-warning">
+        <h5 className="card-title">{item.title}</h5>
+        <p className="card-text">{item.salary} PLN/month</p>
+        <a href={"/offerId/" + item.offerId} className="btn btn-warning">
           Check this out!
         </a>
       </div>

@@ -2,7 +2,7 @@ export default class ApiConnector {
     private readonly baseUrl: string;
   
     constructor() {
-      this.baseUrl = "http://localhost:6500";
+      this.baseUrl = "http://localhost:7000";
     }
   
     async get(
@@ -28,25 +28,27 @@ export default class ApiConnector {
     }
   
     async post(path: string, body: Record<string, any>): Promise<any> {
-        try {
+      try {
           const url = `${this.baseUrl}${path}`;
-    
+  
           const response = await fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify(body),
           });
-    
+  
           if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+              throw new Error(`HTTP error! Status: ${response.status}`);
           }
-    
-          return response.json();
-        } catch (error) {
+  
+          const responseData = await response.json();
+          const offerId = responseData.offerId; // Odczytaj właściwość offerId z małej litery
+          return offerId;
+      } catch (error) {
           console.error("POST Error:", error);
-          throw error; // Rzuć ponownie błąd, aby klient mógł go obsłużyć
-        }
-    }
+          throw error;
+      }
+  }
 }

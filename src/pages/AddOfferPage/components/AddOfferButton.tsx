@@ -1,19 +1,37 @@
+import { useNavigate } from "react-router-dom";
+import ApiConnector from "./../../../client/ApiConnector";
+
 interface Props {
-  onClick: () => void;
+  title: string;
+  description: string;
+  salary: number;
 }
 
-const AddOfferButton = ({ onClick }: Props) => {
+const AddOfferButton = ({ title, description, salary }: Props) => {
+  const navigate = useNavigate();
+  const api = new ApiConnector();
+
+  const handleClick = async () => {
+    try {
+      const postBody = { title, description, salary };
+      const offerId = await api.post("/offer", postBody);
+      if (offerId) {
+        navigate(`/offer/newOfferAdded/${offerId}`);
+      }
+    } catch (error) {
+      console.error("POST Error:", error);
+      throw error;
+    }
+  };
+
   return (
     <div>
-      <div className="">
+      <div>
         <a
-          // href="/offer/newOfferAdded/:15" // TODO do zmiany przy połączniu z backendem
           className="btn btn-dark addOdderButton"
           role="button"
           aria-pressed="true"
-          onClick={() => {
-            onClick();
-          }}
+          onClick={handleClick}
         >
           Add offer
         </a>
