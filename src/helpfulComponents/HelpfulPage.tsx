@@ -11,9 +11,9 @@ const handleSelectItem = (item: string) => {
   console.log(item);
 };
 
-const handleClick = (click: boolean) => {
-  click ? console.log("now clicked") : null;
-};
+// const handleClick = (click: boolean) => {
+//   click ? console.log("now clicked") : null;
+// };
 
 const handleClickN = () => {
   console.log("now clicked");
