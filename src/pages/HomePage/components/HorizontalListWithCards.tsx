@@ -16,7 +16,7 @@ interface OfferList {
 const HorizontalListWithCards = () => {
   const api = new ApiConnector();
   const [offerList, setOfferList] = useState<OfferProps[]>([]);
-  const [isDataFetched, setDataFetched] = useState<boolean>(false);
+  const [isDataFetched = false, setDataFetched] = useState<boolean>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +26,7 @@ const HorizontalListWithCards = () => {
         if (result) {
           const offerList: OfferList = { items: result };
           setOfferList(offerList.items);
+          setDataFetched(true);
         }
       } catch (error) {
         console.error("GET Error:", error);
@@ -33,7 +34,6 @@ const HorizontalListWithCards = () => {
     };
     if (!isDataFetched) {
       fetchData();
-      setDataFetched(true);
     }
   }, [api, isDataFetched]);
 

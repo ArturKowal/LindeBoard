@@ -14,7 +14,7 @@ const CreateOfferForm = () => {
       <TitleField title={setTitle}></TitleField>
       <DescriptionField description={setDescription}></DescriptionField>
       <SalaryField salary={setSalary}></SalaryField>
-      {{title , description , salary} && (
+      {title && description && salary && (
         <AddOfferButton
           title={title}
           description={description}

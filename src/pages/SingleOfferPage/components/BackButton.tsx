@@ -20,7 +20,7 @@ const BackButton = ({ color = "success" }: Props) => {
           aria-pressed="true"
           onClick={handleGoBack}
         >
-          &lt;&lt;&lt; Powrót
+          &lt;&lt;&lt; Return
         </a>
       </div>
     </div>

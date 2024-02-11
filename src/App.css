@@ -155,3 +155,7 @@
 .navbar-light .nav-link:hover {
   background-color: burlywood;
 }
+
+.offerMarginTop {
+  margin-top: 10px;
+}

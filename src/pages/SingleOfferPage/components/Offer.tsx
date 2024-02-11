@@ -16,10 +16,10 @@ const Offer = ({ item }: { item: OfferProps }) => {
           {item.description}
         </li>
         <li className="list-group-item list-group-item-dark alignLeft">
-          Pracodawca oferuje: {item.salary} PLN brutto/ miesiąc pracy
+          The employer offers: {item.salary} PLN gross / month of work
         </li>
         <li className="list-group-item alignRight fontSizeSmaller">
-          id oferty: {item.offerId}
+          Job offer ID: {item.offerId}
         </li>
       </ul>
     </div>
