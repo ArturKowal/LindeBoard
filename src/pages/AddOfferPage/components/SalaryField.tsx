@@ -14,10 +14,12 @@ const SalaryField = ({ salary }: Props) => {
     <div className="input-group mb-3">
       <span className="input-group-text">PLN</span>
       <input
+        id="salary"
+        name="salary"
         type="number"
         min="0"
         className="form-control"
-        aria-label="Amount (to the nearest dollar)"
+        aria-label="Amount (to the nearest number)"
         onChange={(event) => {
           handleEvent(event);
         }}

@@ -29,7 +29,6 @@ const Offers = () => {
         if (result) {
           const offerList: OfferList = { items: result };
           setOfferList(offerList.items);
-          console.log(`otrzymano ${offerList.items.length} ofert`);
           setDataFetched(true);
         }
       } catch (error) {

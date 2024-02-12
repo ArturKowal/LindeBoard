@@ -13,12 +13,13 @@ const DescriptionField = ({ description }: Props) => {
     };
   return (
     <div className="mb-3">
-      <label htmlFor="exampleFormControlTextarea1" className="form-label">
+      <label htmlFor="exampleFormControlTextarea2" className="form-label">
         Description job offer
       </label>
       <textarea
+        name="jobOfferDescription"
         className="form-control"
-        id="exampleFormControlTextarea1"
+        id="exampleFormControlTextarea2"
         onChange={(event) => {
           handleEvent(event);
         }}

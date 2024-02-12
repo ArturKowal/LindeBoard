@@ -14,9 +14,15 @@ const SearchFieldWithButton = () => {
 
   const handleSearch = () => {
     if (!key) {
-      key = "default"
+      key = " "
     }
-    navigate("/offers/results/" + key.split(" "));
+    navigate("/offers/results/" + encodeURIComponent(key));
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
@@ -25,10 +31,13 @@ const SearchFieldWithButton = () => {
       style={{ minWidth: 300, maxWidth: 600, padding: 20 , margin: "auto"}}
     >
       <input
+        name="search"
         type="text"
         className="form-control"
         placeholder="Position"
         aria-describedby="button-addon2"
+        value={key}
+        onKeyDown={handleKeyDown}
         onChange={(event) => {
           handleEvent(event);
         }}

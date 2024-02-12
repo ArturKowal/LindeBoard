@@ -19,9 +19,10 @@ const TitleField = ({ title }: Props) => {
           Title
         </label>
         <input
+          name="positionName"
           type="text"
           className="form-control"
-          id="title"
+          id="exampleFormControlInput1"
           placeholder="Job title / position name"
           onChange={(event) => {
             handleEvent(event);

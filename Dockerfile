@@ -8,4 +8,5 @@ RUN npm install
 COPY . .
 EXPOSE 8787
 RUN npm i --include=dev
+RUN npm run build
 CMD [ "npm", "run", "preview" ]
