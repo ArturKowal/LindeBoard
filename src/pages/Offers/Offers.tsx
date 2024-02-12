@@ -20,8 +20,8 @@ const Offers = () => {
   const itemsPerPage = 10;
   const api = new ApiConnector();
   const [offerList, setOfferList] = useState<OfferProps[]>([]);
-  const [isDataFetched, setDataFetched] = useState<boolean>(false);
-
+  const [oldKeys, setOldKeys] = useState<string>(``);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,16 +29,17 @@ const Offers = () => {
         if (result) {
           const offerList: OfferList = { items: result };
           setOfferList(offerList.items);
-          setDataFetched(true);
+          console.log("##### result recived")
+          setOldKeys(keys)
         }
       } catch (error) {
         console.error("GET Error:", error);
       }
     };
-    if (!isDataFetched) {
+    if (oldKeys!=keys) {
       fetchData();
     }
-  }, [api, isDataFetched]);
+  }, [api, oldKeys]);
 
   const startIndex = (parseInt(page) - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -63,13 +64,7 @@ const Offers = () => {
       <div className="offerMarginTop">
       <OffersPropose currentOffers={currentOffers} />
       </div>
-      <NavigationButtons 
-        offerListLenght={offerList.length}
-        endIndex={endIndex}
-        page={parseInt(page)}
-        itemsPerPage={itemsPerPage}
-        keys={keys}
-      />
+      <NavigationButtons offerListLenght={offerList.length}  endIndex={endIndex} page={parseInt(page)} itemsPerPage={itemsPerPage} keys={keys}/>
     </div>
   );
 };

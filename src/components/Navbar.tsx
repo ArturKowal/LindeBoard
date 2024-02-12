@@ -6,9 +6,9 @@ const Navbar = () => {
 
   let [key, setKey] = useState("");
 
-  const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setKey((event.target as HTMLInputElement).value);
+    setKey(event.target.value);
   };
 
   const navigate = useNavigate();
@@ -51,23 +51,26 @@ const Navbar = () => {
               </a>
             </div>
           <div className="d-flex">
-            <div>
-              <form className="d-flex">
-                <input
-                  name=""
-                  id="search"
-                  type="text"
-                  className="form-control"
-                  placeholder="Position"
-                  aria-describedby="button-addon2"
-                  value={key}
-                  onKeyDown={handleKeyDown}
-                  onChange={(event) => {
-                    handleEvent(event);
-                  }}
-                />
-                <button className="btn btn-outline-success" id="button-addon3" onClick={handleSearch}>Search</button>
-              </form>
+            <div className="input-group">
+            <input 
+              name="searchInput"
+              id="searchInput"
+              type="search" 
+              className="form-control rounded" 
+              placeholder="Search" 
+              aria-label="Search" 
+              aria-describedby="search-addon" 
+              onKeyDown={handleKeyDown}
+              onChange={handleChange}
+            />
+            <button 
+              type="button" 
+              className="btn btn-outline-primary" 
+              data-mdb-ripple-init
+              onClick={handleSearch}
+            >
+              Search
+            </button>
             </div>
           </div>
         </div>
